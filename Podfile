@@ -10,5 +10,9 @@ target 'moviesensei' do
 	pod 'RxSwift', '~> 3.0'
 	pod 'RxCocoa', '~> 3.0'
     pod 'SwiftyJSON'
+
+    pod 'Firebase/Core'
+    pod 'Firebase/RemoteConfig'
 end
 
+	

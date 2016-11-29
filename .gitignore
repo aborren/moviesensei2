@@ -92,3 +92,10 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/screenshots
+fastlane/metadata
+fastlane/test_output
+
+*.cer
+*.mobileprovision
+*.dSYM.zip
+

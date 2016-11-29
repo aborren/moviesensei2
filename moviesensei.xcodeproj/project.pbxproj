@@ -16,6 +16,7 @@
 		A28704751DEE0732009B763F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28704731DEE0732009B763F /* LaunchScreen.storyboard */; };
 		A28704801DEE0732009B763F /* moviesenseiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A287047F1DEE0732009B763F /* moviesenseiTests.swift */; };
 		A287048B1DEE0732009B763F /* moviesenseiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A287048A1DEE0732009B763F /* moviesenseiUITests.swift */; };
+		A28704991DEE0CCE009B763F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A28704981DEE0CCE009B763F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		A28704861DEE0732009B763F /* moviesenseiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moviesenseiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A287048A1DEE0732009B763F /* moviesenseiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moviesenseiUITests.swift; sourceTree = "<group>"; };
 		A287048C1DEE0732009B763F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A28704981DEE0CCE009B763F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A2A7FD1C1DEE0FDD0069754B /* moviesensei.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = moviesensei.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 		A28704671DEE0732009B763F /* moviesensei */ = {
 			isa = PBXGroup;
 			children = (
+				A2A7FD1C1DEE0FDD0069754B /* moviesensei.entitlements */,
+				A28704981DEE0CCE009B763F /* GoogleService-Info.plist */,
 				A28704681DEE0732009B763F /* AppDelegate.swift */,
 				A287046A1DEE0732009B763F /* FirstViewController.swift */,
 				A287046C1DEE0732009B763F /* SecondViewController.swift */,
@@ -224,7 +229,12 @@
 					A28704641DEE0731009B763F = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 7SX7NNMX7Q;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					A287047A1DEE0732009B763F = {
 						CreatedOnToolsVersion = 8.1;
@@ -265,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A28704991DEE0CCE009B763F /* GoogleService-Info.plist in Resources */,
 				A28704751DEE0732009B763F /* LaunchScreen.storyboard in Resources */,
 				A28704721DEE0732009B763F /* Assets.xcassets in Resources */,
 				A28704701DEE0732009B763F /* Main.storyboard in Resources */,
@@ -494,13 +505,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 52507F221ED97EE3059F69F8 /* Pods-moviesensei.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = moviesensei/moviesensei.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 7SX7NNMX7Q;
 				INFOPLIST_FILE = moviesensei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dna.moviesensei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "34f90e45-7ff2-4c70-88d5-71afa0144e07";
+				PROVISIONING_PROFILE_SPECIFIER = "dna.moviesensei AppStore";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -509,13 +524,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E1B42349E3FBC412E231DAA /* Pods-moviesensei.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = moviesensei/moviesensei.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 7SX7NNMX7Q;
 				INFOPLIST_FILE = moviesensei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dna.moviesensei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "34f90e45-7ff2-4c70-88d5-71afa0144e07";
+				PROVISIONING_PROFILE_SPECIFIER = "dna.moviesensei AppStore";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
